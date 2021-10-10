@@ -790,8 +790,21 @@ export default {
   data() {
     return {
       back: backgroundImg,
-      active: true
+      active: true,
+      title: 'Rozzy Rahmanda'
     };
+  },
+  head () {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Rozzy Rahmanda Porfolio'
+        }
+      ]
+    }
   },
   methods: {
     showBar() {
