@@ -2,133 +2,229 @@
   <div>
     <div class="sm:flex">
       <div class="fixed z-30">
-        <div
-          :class="{
-            'bg-gray-100': true,
-            'h-screen': true,
-            'shadow-lg': true,
-            hidden: active,
-            'sm:inline-block': true
-          }"
-        >
-          <div class="bg-indigo-700 px-6 py-4">
-            <div class="font-sans text-4xl font-bold text-white">
-              R
+        <transition name="fade" appear>
+          <div
+            :class="{
+              'bg-gray-100': true,
+              'h-screen': true,
+              'shadow-lg': true,
+              hidden: active,
+              'sm:inline-block': true
+            }"
+          >
+            <div class="bg-indigo-700 px-6 py-4">
+              <div class="font-sans text-4xl font-bold text-white">
+                R
+              </div>
+            </div>
+            <div class="pt-32">
+              <ul class="font-bold">
+                <li
+                  :class="{
+                    'p-4': true,
+                    'border-b-2': true,
+                    'text-indigo-700': nav == 'home'
+                  }"
+                  data-tip="Home"
+                >
+                  <a
+                    href="#home"
+                    data-tip="Home"
+                    class="tooltip tooltip-right"
+                    @click="navigation('home')"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-10 w-10"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li
+                  :class="{
+                    'p-4': true,
+                    'border-b-2': true,
+                    'text-indigo-700': nav == 'profil'
+                  }"
+                >
+                  <a
+                    href="#profil"
+                    @click="navigation('profil')"
+                    data-tip="Profile"
+                    class="tooltip tooltip-right"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-10 w-10"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li
+                  :class="{
+                    'p-4': true,
+                    'border-b-2': true,
+                    'text-indigo-700': nav == 'resume'
+                  }"
+                >
+                  <a
+                    href="#resume"
+                    @click="navigation('resume')"
+                    data-tip="Resume"
+                    class="tooltip tooltip-right"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-10 w-10"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li
+                  :class="{
+                    'p-4': true,
+                    'border-b-2': true,
+                    'text-indigo-700': nav == 'portfolio'
+                  }"
+                >
+                  <a
+                    href="#portfolio"
+                    @click="navigation('portfolio')"
+                    data-tip="My Projects"
+                    class="tooltip tooltip-right"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-10 w-10"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li
+                  :class="{ 'p-4': true, 'text-indigo-700': nav == 'kontak' }"
+                >
+                  <a
+                    href="#kontak"
+                    @click="navigation('kontak')"
+                    data-tip="Contact"
+                    class="tooltip tooltip-right"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-10 w-10"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                      />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
-          <div class="pt-32">
-            <ul class="font-bold">
-              <li :class="{'p-4': true, 'border-b-2': true, 'text-indigo-700': nav == 'home'}">
-                <a href="#home" @click="navigation('home')">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-10 w-10"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                    />
-                  </svg>
-                </a>
-              </li>
-              <li :class="{'p-4': true, 'border-b-2': true, 'text-indigo-700': nav == 'profil'}">
-                <a href="#profil" @click="navigation('profil')">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-10 w-10"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                    />
-                  </svg>
-                </a>
-              </li>
-              <li :class="{'p-4': true, 'border-b-2': true, 'text-indigo-700': nav == 'resume'}">
-                <a href="#resume" @click="navigation('resume')">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-10 w-10"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                    />
-                  </svg>
-                </a>
-              </li>
-              <li :class="{'p-4': true, 'border-b-2': true, 'text-indigo-700': nav == 'portfolio'}">
-                <a href="#portfolio" @click="navigation('portfolio')">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-10 w-10"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
-                </a>
-              </li>
-              <li :class="{'p-4': true, 'text-indigo-700': nav == 'kontak'}">
-                <a href="#kontak" @click="navigation('kontak')">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-10 w-10"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                    />
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+        </transition>
       </div>
       <div id="home">
         <div class="sm:pl-32 py-6 hidden sm:inline-block absolute">
           <div class="grid grid-cols-12 gap-2">
             <div class="col-span-2">
-              <a
-                href="#"
-                class="font-bold text-indigo-700 hover:text-indigo-900"
-                >+62 813 6281 4248</a
+              <button
+                class="font-bold text-indigo-700 hover:text-indigo-900 btn-ghost p-2 rounded-full tooltip"
+                data-tip="Whatsapp"
               >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 48 48"
+                  width="40px"
+                  height="40px"
+                >
+                  <path
+                    fill="#fff"
+                    d="M4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98c-0.001,0,0,0,0,0h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303z"
+                  />
+                  <path
+                    fill="#fff"
+                    d="M4.868,43.803c-0.132,0-0.26-0.052-0.355-0.148c-0.125-0.127-0.174-0.312-0.127-0.483l2.639-9.636c-1.636-2.906-2.499-6.206-2.497-9.556C4.532,13.238,13.273,4.5,24.014,4.5c5.21,0.002,10.105,2.031,13.784,5.713c3.679,3.683,5.704,8.577,5.702,13.781c-0.004,10.741-8.746,19.48-19.486,19.48c-3.189-0.001-6.344-0.788-9.144-2.277l-9.875,2.589C4.953,43.798,4.911,43.803,4.868,43.803z"
+                  />
+                  <path
+                    fill="#cfd8dc"
+                    d="M24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,4C24.014,4,24.014,4,24.014,4C12.998,4,4.032,12.962,4.027,23.979c-0.001,3.367,0.849,6.685,2.461,9.622l-2.585,9.439c-0.094,0.345,0.002,0.713,0.254,0.967c0.19,0.192,0.447,0.297,0.711,0.297c0.085,0,0.17-0.011,0.254-0.033l9.687-2.54c2.828,1.468,5.998,2.243,9.197,2.244c11.024,0,19.99-8.963,19.995-19.98c0.002-5.339-2.075-10.359-5.848-14.135C34.378,6.083,29.357,4.002,24.014,4L24.014,4z"
+                  />
+                  <path
+                    fill="#40c351"
+                    d="M35.176,12.832c-2.98-2.982-6.941-4.625-11.157-4.626c-8.704,0-15.783,7.076-15.787,15.774c-0.001,2.981,0.833,5.883,2.413,8.396l0.376,0.597l-1.595,5.821l5.973-1.566l0.577,0.342c2.422,1.438,5.2,2.198,8.032,2.199h0.006c8.698,0,15.777-7.077,15.78-15.776C39.795,19.778,38.156,15.814,35.176,12.832z"
+                  />
+                  <path
+                    fill="#fff"
+                    fill-rule="evenodd"
+                    d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
             </div>
             <div>
-              <a
-                href="#"
-                class="font-bold text-indigo-700 hover:text-indigo-900"
+              <button
+                class="font-bold text-indigo-700 hover:text-indigo-900 btn-ghost p-2 rounded-full tooltip"
+                data-tip="Email"
               >
-                rozzyrahmanda0@gmail.com
-              </a>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-10 w-10"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
@@ -140,21 +236,62 @@
               <div class="text-xl md:text-2xl font-bold">
                 Hello, My name is
               </div>
-              <h1 class="text-3xl md:text-7xl font-bold py-3">
+              <h1
+                :class="{
+                  'text-3xl': true,
+                  'md:text-7xl': true,
+                  'font-bold': true,
+                  'py-3': true,
+                  'animate-pulse': spin
+                }"
+              >
                 Rozzy Rahmanda
               </h1>
-              <div class="text-xl sm:text-2xl text-indigo-700 font-bold">
-                Fullstack Developer
+              <div class="overflow-hidden h-8 py-0">
+                <div
+                  :class="
+                    `text-xl sm:text-2xl text-indigo-700 font-extrabold transition-all duration-500 ease-linear transform -translate-y-${num}`
+                  "
+                  v-for="(text, index) in textSlide"
+                  :key="index"
+                >
+                  {{ text }}
+                </div>
               </div>
               <div class="py-3 sm:w-3/5">
                 I develop services for customers of all sizes, specializing in
                 front-end and also back-end for modern website, web services and
                 online stores.
               </div>
-              <button class="btn btn-active">Download CV</button>
+              <button class="btn btn-active" @click="changeText">
+                Download CV
+              </button>
             </div>
             <div class="hidden sm:inline-block col-span-5">
-              <img :src="mobile" alt="mobile" class="w-5/6" />
+              <img :src="mobile" alt="mobile" class="w-5/6 animate-test" />
+              <div
+                class="hidden sm:inline-block z-30 fixed -mt-10 right-0 mr-12"
+              >
+                <button
+                  class="btn btn-circle btn-primary btn-lg"
+                  @click="scrollTop"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-12 w-12"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M7 11l5-5m0 0l5 5m-5-5v12"
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
           <div class="sm:hidden fixed z-30">
@@ -209,90 +346,105 @@
                   class="grid grid-cols-12 mx-2 sm:mx-48 justify-items-center py-4"
                 >
                   <div class="col-span-4">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 48 48"
-                      width="50px"
-                      height="50px"
+                    <button
+                      class="font-bold text-indigo-700 hover:text-indigo-900 btn-ghost p-2 rounded-full tooltip"
+                      data-tip="Linkedin"
                     >
-                      <path
-                        fill="#0288d1"
-                        d="M24 4A20 20 0 1 0 24 44A20 20 0 1 0 24 4Z"
-                      />
-                      <path
-                        fill="#fff"
-                        d="M14 19H18V34H14zM15.988 17h-.022C14.772 17 14 16.11 14 14.999 14 13.864 14.796 13 16.011 13c1.217 0 1.966.864 1.989 1.999C18 16.11 17.228 17 15.988 17zM35 24.5c0-3.038-2.462-5.5-5.5-5.5-1.862 0-3.505.928-4.5 2.344V19h-4v15h4v-8c0-1.657 1.343-3 3-3s3 1.343 3 3v8h4C35 34 35 24.921 35 24.5z"
-                      />
-                    </svg>
-                  </div>
-                  <div class="col-span-4">
-                    <svg
-                      fill="#000000"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 48 48"
-                      width="48px"
-                      height="48px"
-                    >
-                      <path
-                        d="M17.791,46.836C18.502,46.53,19,45.823,19,45v-5.4c0-0.197,0.016-0.402,0.041-0.61C19.027,38.994,19.014,38.997,19,39 c0,0-3,0-3.6,0c-1.5,0-2.8-0.6-3.4-1.8c-0.7-1.3-1-3.5-2.8-4.7C8.9,32.3,9.1,32,9.7,32c0.6,0.1,1.9,0.9,2.7,2c0.9,1.1,1.8,2,3.4,2 c2.487,0,3.82-0.125,4.622-0.555C21.356,34.056,22.649,33,24,33v-0.025c-5.668-0.182-9.289-2.066-10.975-4.975 c-3.665,0.042-6.856,0.405-8.677,0.707c-0.058-0.327-0.108-0.656-0.151-0.987c1.797-0.296,4.843-0.647,8.345-0.714 c-0.112-0.276-0.209-0.559-0.291-0.849c-3.511-0.178-6.541-0.039-8.187,0.097c-0.02-0.332-0.047-0.663-0.051-0.999 c1.649-0.135,4.597-0.27,8.018-0.111c-0.079-0.5-0.13-1.011-0.13-1.543c0-1.7,0.6-3.5,1.7-5c-0.5-1.7-1.2-5.3,0.2-6.6 c2.7,0,4.6,1.3,5.5,2.1C21,13.4,22.9,13,25,13s4,0.4,5.6,1.1c0.9-0.8,2.8-2.1,5.5-2.1c1.5,1.4,0.7,5,0.2,6.6c1.1,1.5,1.7,3.2,1.6,5 c0,0.484-0.045,0.951-0.11,1.409c3.499-0.172,6.527-0.034,8.204,0.102c-0.002,0.337-0.033,0.666-0.051,0.999 c-1.671-0.138-4.775-0.28-8.359-0.089c-0.089,0.336-0.197,0.663-0.325,0.98c3.546,0.046,6.665,0.389,8.548,0.689 c-0.043,0.332-0.093,0.661-0.151,0.987c-1.912-0.306-5.171-0.664-8.879-0.682C35.112,30.873,31.557,32.75,26,32.969V33 c2.6,0,5,3.9,5,6.6V45c0,0.823,0.498,1.53,1.209,1.836C41.37,43.804,48,35.164,48,25C48,12.318,37.683,2,25,2S2,12.318,2,25 C2,35.164,8.63,43.804,17.791,46.836z"
-                      />
-                    </svg>
-                  </div>
-                  <div class="col-span-4">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 48 48"
-                      width="48px"
-                      height="48px"
-                    >
-                      <radialGradient
-                        id="yOrnnhliCrdS2gy~4tD8ma"
-                        cx="19.38"
-                        cy="42.035"
-                        r="44.899"
-                        gradientUnits="userSpaceOnUse"
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 48 48"
+                        width="50px"
+                        height="50px"
                       >
-                        <stop offset="0" stop-color="#fd5" />
-                        <stop offset=".328" stop-color="#ff543f" />
-                        <stop offset=".348" stop-color="#fc5245" />
-                        <stop offset=".504" stop-color="#e64771" />
-                        <stop offset=".643" stop-color="#d53e91" />
-                        <stop offset=".761" stop-color="#cc39a4" />
-                        <stop offset=".841" stop-color="#c837ab" />
-                      </radialGradient>
-                      <path
-                        fill="url(#yOrnnhliCrdS2gy~4tD8ma)"
-                        d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"
-                      />
-                      <radialGradient
-                        id="yOrnnhliCrdS2gy~4tD8mb"
-                        cx="11.786"
-                        cy="5.54"
-                        r="29.813"
-                        gradientTransform="matrix(1 0 0 .6663 0 1.849)"
-                        gradientUnits="userSpaceOnUse"
-                      >
-                        <stop offset="0" stop-color="#4168c9" />
-                        <stop
-                          offset=".999"
-                          stop-color="#4168c9"
-                          stop-opacity="0"
+                        <path
+                          fill="#0288d1"
+                          d="M24 4A20 20 0 1 0 24 44A20 20 0 1 0 24 4Z"
                         />
-                      </radialGradient>
-                      <path
-                        fill="url(#yOrnnhliCrdS2gy~4tD8mb)"
-                        d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"
-                      />
-                      <path
-                        fill="#fff"
-                        d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"
-                      />
-                      <circle cx="31.5" cy="16.5" r="1.5" fill="#fff" />
-                      <path
-                        fill="#fff"
-                        d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"
-                      />
-                    </svg>
+                        <path
+                          fill="#fff"
+                          d="M14 19H18V34H14zM15.988 17h-.022C14.772 17 14 16.11 14 14.999 14 13.864 14.796 13 16.011 13c1.217 0 1.966.864 1.989 1.999C18 16.11 17.228 17 15.988 17zM35 24.5c0-3.038-2.462-5.5-5.5-5.5-1.862 0-3.505.928-4.5 2.344V19h-4v15h4v-8c0-1.657 1.343-3 3-3s3 1.343 3 3v8h4C35 34 35 24.921 35 24.5z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="col-span-4">
+                    <button
+                      class="font-bold text-indigo-700 hover:text-indigo-900 btn-ghost p-2 rounded-full tooltip"
+                      data-tip="Github"
+                    >
+                      <svg
+                        fill="#000000"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 48 48"
+                        width="48px"
+                        height="48px"
+                      >
+                        <path
+                          d="M17.791,46.836C18.502,46.53,19,45.823,19,45v-5.4c0-0.197,0.016-0.402,0.041-0.61C19.027,38.994,19.014,38.997,19,39 c0,0-3,0-3.6,0c-1.5,0-2.8-0.6-3.4-1.8c-0.7-1.3-1-3.5-2.8-4.7C8.9,32.3,9.1,32,9.7,32c0.6,0.1,1.9,0.9,2.7,2c0.9,1.1,1.8,2,3.4,2 c2.487,0,3.82-0.125,4.622-0.555C21.356,34.056,22.649,33,24,33v-0.025c-5.668-0.182-9.289-2.066-10.975-4.975 c-3.665,0.042-6.856,0.405-8.677,0.707c-0.058-0.327-0.108-0.656-0.151-0.987c1.797-0.296,4.843-0.647,8.345-0.714 c-0.112-0.276-0.209-0.559-0.291-0.849c-3.511-0.178-6.541-0.039-8.187,0.097c-0.02-0.332-0.047-0.663-0.051-0.999 c1.649-0.135,4.597-0.27,8.018-0.111c-0.079-0.5-0.13-1.011-0.13-1.543c0-1.7,0.6-3.5,1.7-5c-0.5-1.7-1.2-5.3,0.2-6.6 c2.7,0,4.6,1.3,5.5,2.1C21,13.4,22.9,13,25,13s4,0.4,5.6,1.1c0.9-0.8,2.8-2.1,5.5-2.1c1.5,1.4,0.7,5,0.2,6.6c1.1,1.5,1.7,3.2,1.6,5 c0,0.484-0.045,0.951-0.11,1.409c3.499-0.172,6.527-0.034,8.204,0.102c-0.002,0.337-0.033,0.666-0.051,0.999 c-1.671-0.138-4.775-0.28-8.359-0.089c-0.089,0.336-0.197,0.663-0.325,0.98c3.546,0.046,6.665,0.389,8.548,0.689 c-0.043,0.332-0.093,0.661-0.151,0.987c-1.912-0.306-5.171-0.664-8.879-0.682C35.112,30.873,31.557,32.75,26,32.969V33 c2.6,0,5,3.9,5,6.6V45c0,0.823,0.498,1.53,1.209,1.836C41.37,43.804,48,35.164,48,25C48,12.318,37.683,2,25,2S2,12.318,2,25 C2,35.164,8.63,43.804,17.791,46.836z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="col-span-4">
+                    <button
+                      class="font-bold text-indigo-700 hover:text-indigo-900 btn-ghost p-2 rounded-full tooltip"
+                      data-tip="Instagram"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 48 48"
+                        width="48px"
+                        height="48px"
+                      >
+                        <radialGradient
+                          id="yOrnnhliCrdS2gy~4tD8ma"
+                          cx="19.38"
+                          cy="42.035"
+                          r="44.899"
+                          gradientUnits="userSpaceOnUse"
+                        >
+                          <stop offset="0" stop-color="#fd5" />
+                          <stop offset=".328" stop-color="#ff543f" />
+                          <stop offset=".348" stop-color="#fc5245" />
+                          <stop offset=".504" stop-color="#e64771" />
+                          <stop offset=".643" stop-color="#d53e91" />
+                          <stop offset=".761" stop-color="#cc39a4" />
+                          <stop offset=".841" stop-color="#c837ab" />
+                        </radialGradient>
+                        <path
+                          fill="url(#yOrnnhliCrdS2gy~4tD8ma)"
+                          d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"
+                        />
+                        <radialGradient
+                          id="yOrnnhliCrdS2gy~4tD8mb"
+                          cx="11.786"
+                          cy="5.54"
+                          r="29.813"
+                          gradientTransform="matrix(1 0 0 .6663 0 1.849)"
+                          gradientUnits="userSpaceOnUse"
+                        >
+                          <stop offset="0" stop-color="#4168c9" />
+                          <stop
+                            offset=".999"
+                            stop-color="#4168c9"
+                            stop-opacity="0"
+                          />
+                        </radialGradient>
+                        <path
+                          fill="url(#yOrnnhliCrdS2gy~4tD8mb)"
+                          d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"
+                        />
+                        <path
+                          fill="#fff"
+                          d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"
+                        />
+                        <circle cx="31.5" cy="16.5" r="1.5" fill="#fff" />
+                        <path
+                          fill="#fff"
+                          d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"
+                        />
+                      </svg>
+                    </button>
                   </div>
                 </div>
                 <div class="text-center">
@@ -308,7 +460,7 @@
                 <div class="stack py-6">
                   <div class="text-3xl font-bold">Biography</div>
                   <div
-                    class="bg-indigo-400 rounded-full w-12 h-12 opacity-50 -ml-28 -mt-3"
+                    class="bg-indigo-400 rounded-full w-12 h-12 opacity-50 -ml-28 -mt-3 animate-dot"
                   ></div>
                 </div>
                 <div>
@@ -337,7 +489,7 @@
               <div class="stack mx-2 pb-6">
                 <div class="text-3xl font-bold">What I do?</div>
                 <div
-                  class="bg-indigo-400 rounded-full w-12 h-12 opacity-50 -ml-28 -mt-3"
+                  class="bg-indigo-400 rounded-full w-12 h-12 opacity-50 -ml-28 -mt-3 animate-dot"
                 ></div>
               </div>
               <div class="flex flex-col sm:grid sm:grid-cols-3 gap-6">
@@ -347,11 +499,9 @@
                   <div class="card-body">
                     <h2 class="card-title">Front End</h2>
                     <div class="justify-end card-actions">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Minus esse enim inventore, vel quod iure asperiores
-                      corporis voluptate quaerat eius similique provident
-                      tempore! Eos doloremque aut earum! Reprehenderit, veniam
-                      cupiditate!
+                      Creating a functional user experience by managing the
+                      client-facing aspect of website with responsive and modern
+                      looking design.
                     </div>
                   </div>
                 </div>
@@ -359,23 +509,20 @@
                   <div class="card-body">
                     <h2 class="card-title">Back End</h2>
                     <div class="justify-end card-actions">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Minus esse enim inventore, vel quod iure asperiores
-                      corporis voluptate quaerat eius similique provident
-                      tempore! Eos doloremque aut earum! Reprehenderit, veniam
-                      cupiditate!
+                      Building and maintaining the logic and functionality
+                      needed to power the user-facing components of a website.
+                      Preparing all the information that needs to be sent over
+                      to be used on the client-facing side of the web browser
                     </div>
                   </div>
                 </div>
                 <div class="card hover:shadow-2xl lg:card-side bg-gray-200">
                   <div class="card-body">
-                    <h2 class="card-title">Make Sure Both of Them Work</h2>
+                    <h2 class="card-title">Ensure Both of Them Work</h2>
                     <div class="justify-end card-actions">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Minus esse enim inventore, vel quod iure asperiores
-                      corporis voluptate quaerat eius similique provident
-                      tempore! Eos doloremque aut earum! Reprehenderit, veniam
-                      cupiditate!
+                      Ensure that all functions on the front-end as well as the
+                      back-end run properly. And can be maintained easily and
+                      developed on a high scale
                     </div>
                   </div>
                 </div>
@@ -387,7 +534,7 @@
           <div class="stack pb-6">
             <div class="text-3xl font-bold">Experience</div>
             <div
-              class="bg-indigo-400 rounded-full w-12 h-12 opacity-50 -ml-28 -mt-3"
+              class="bg-indigo-400 rounded-full w-12 h-12 opacity-50 -ml-28 -mt-3 animate-dot"
             ></div>
           </div>
           <div class="pb-6 mx-2">
@@ -418,7 +565,7 @@
           <div class="stack py-6">
             <div class="text-3xl font-bold">Education & Skills</div>
             <div
-              class="bg-indigo-400 rounded-full w-12 h-12 opacity-50 -ml-52 -mt-3"
+              class="bg-indigo-400 rounded-full w-12 h-12 opacity-50 -ml-52 -mt-3 animate-dot"
             ></div>
           </div>
           <div class="pb-6 sm:flex sm:flex-row">
@@ -521,102 +668,37 @@
             <div class="stack py-6 mx-2">
               <div class="text-3xl font-bold">My Portfolio</div>
               <div
-                class="bg-indigo-400 rounded-full w-12 h-12 opacity-50 -ml-36 -mt-3"
+                class="bg-indigo-400 rounded-full w-12 h-12 opacity-50 -ml-36 -mt-3 animate-dot"
               ></div>
             </div>
-            <div class="sm:grid sm:grid-cols-3 gap-4">
-              <div class="card shadow-xl image-full my-2">
-                <figure>
-                  <img src="https://picsum.photos/id/1005/400/250" />
-                </figure>
-                <div class="justify-end card-body">
-                  <h2 class="card-title">Bappeda Kota Tebing Tinggi</h2>
-                  <p>
-                    Rerum reiciendis beatae tenetur excepturi aut pariatur est
-                    eos. Sit sit necessitatibus veritatis sed molestiae
-                    voluptates incidunt iure sapiente.
-                  </p>
-                  <div class="card-actions">
-                    <button class="btn glass">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-6 w-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
+            <div class="sm:grid sm:grid-rows-2 sm:grid-flow-col flex flex-col sm:h-3/4">
+              <div class="bg-gray-200 row-span-2 h-3/4">
+                <img
+                  src="https://picsum.photos/id/1/200/300"
+                  alt="gambar"
+                  class="h-full w-full"
+                />
               </div>
-              <div class="card shadow-xl image-full my-2">
-                <figure>
-                  <img src="https://picsum.photos/id/1005/400/250" />
-                </figure>
-                <div class="justify-end card-body">
-                  <h2 class="card-title">Bappeda Kota Tebing Tinggi</h2>
-                  <p>
-                    Rerum reiciendis beatae tenetur excepturi aut pariatur est
-                    eos. Sit sit necessitatibus veritatis sed molestiae
-                    voluptates incidunt iure sapiente.
-                  </p>
-                  <div class="card-actions">
-                    <button class="btn glass">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-6 w-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
+              <div class="bg-gray-200 h-3/4">
+                <img
+                  src="https://picsum.photos/id/1/200/300"
+                  alt="gambar"
+                  class="h-full w-full"
+                />
               </div>
-              <div class="card shadow-xl image-full my-2">
-                <figure>
-                  <img src="https://picsum.photos/id/1005/400/250" />
-                </figure>
-                <div class="justify-end card-body">
-                  <h2 class="card-title">Bappeda Kota Tebing Tinggi</h2>
-                  <p>
-                    Rerum reiciendis beatae tenetur excepturi aut pariatur est
-                    eos. Sit sit necessitatibus veritatis sed molestiae
-                    voluptates incidunt iure sapiente.
-                  </p>
-                  <div class="card-actions">
-                    <button class="btn glass">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-6 w-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
+              <div class="bg-gray-200 h-3/4">
+                <img
+                  src="https://picsum.photos/id/1/200/300"
+                  alt="gambar"
+                  class="h-full w-full"
+                />
+              </div>
+              <div class="bg-gray-200 row-span-2 h-3/4">
+                <img
+                  src="https://picsum.photos/id/1/200/300"
+                  alt="gambar"
+                  class="h-full w-full"
+                />
               </div>
             </div>
           </div>
@@ -807,13 +889,28 @@ import backgroundImg from "@/static/white.webp";
 import mobile from "@/static/apps.svg";
 
 export default {
+  scrollToTop: true,
   data() {
     return {
       back: backgroundImg,
       active: true,
       title: "Rozzy Rahmanda",
       mobile: mobile,
-      nav: 'home'
+      nav: "home",
+      spin: false,
+      textSlide: [
+        "Fullstack Web Developer",
+        "Vue JS",
+        "Nuxt JS",
+        "TailwindCSS",
+        "Bootstrap 4",
+        "Node JS + Express + Sequelize",
+        "Laravel + RESTFULL API",
+        "Python + Fast API"
+      ],
+      textOnSlide: "",
+      num: 0,
+      show: false
     };
   },
   head() {
@@ -828,6 +925,18 @@ export default {
       ]
     };
   },
+  beforeMount() {
+    window.addEventListener("scroll", this.actionScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.actionScroll);
+  },
+  mounted() {
+    this.textOnSlide = this.textSlide[this.num];
+    setInterval(() => {
+      this.changeText();
+    }, 2000);
+  },
   methods: {
     showBar() {
       if (this.active) {
@@ -836,18 +945,59 @@ export default {
         this.active = true;
       }
     },
-    navigation (value) {
-      this.nav = value
+    navigation(value) {
+      this.nav = value;
+    },
+    scrollTop() {
+      window.scrollTo({ top: 0 });
+      this.nav = "home";
+    },
+    onSpin() {
+      if (this.spin == false) {
+        this.spin = true;
+      } else {
+        this.spin = false;
+      }
+    },
+    actionScroll(event) {
+      const scroll = window.scrollY;
+      if (scroll < 900) {
+        this.nav = "home";
+      } else if (scroll < 1900) {
+        this.nav = "profil";
+      } else if (scroll < 2900) {
+        this.nav = "resume";
+      } else if (scroll < 3100) {
+        this.nav = "portfolio";
+      }
+      console.log(scroll);
+    },
+    changeText() {
+      if (this.num < this.textSlide.length * 8 - 8) {
+        this.num = this.num + 8;
+      } else {
+        this.num = 0;
+      }
     }
   }
 };
 </script>
 
-<style scoped>
+<style>
 .image-back {
   background-image: url("~static/back_white.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+html {
+  scroll-behavior: smooth;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>
