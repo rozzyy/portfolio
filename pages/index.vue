@@ -680,7 +680,7 @@
                 class="bg-indigo-400 rounded-full w-12 h-12 opacity-50 -ml-36 -mt-3 animate-dot"
               ></div>
             </div>
-            <silent-box :gallery="gallery"></silent-box>
+            <!-- <silent-box :gallery="gallery"></silent-box> -->
           </div>
         </div>
         <div class="sm:pl-24 bg-blue-100">
