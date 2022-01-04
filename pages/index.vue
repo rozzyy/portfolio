@@ -170,9 +170,11 @@
         <div class="sm:pl-32 py-6 hidden sm:inline-block absolute">
           <div class="grid grid-cols-12 gap-2">
             <div class="col-span-2">
-              <button
+              <a
                 class="font-bold text-indigo-700 hover:text-indigo-900 btn-ghost p-2 rounded-full tooltip"
                 data-tip="Whatsapp"
+                href="https://api.whatsapp.com/send?phone=+6281362814248"
+                target="_blank"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -203,12 +205,13 @@
                     clip-rule="evenodd"
                   />
                 </svg>
-              </button>
+              </a>
             </div>
             <div>
-              <button
+              <a
                 class="font-bold text-indigo-700 hover:text-indigo-900 btn-ghost p-2 rounded-full tooltip"
                 data-tip="Email"
+                href="mailto:rozzyrahmanda0@gmail.com"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -224,7 +227,7 @@
                     d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"
                   />
                 </svg>
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -263,7 +266,7 @@
                 front-end and also back-end for modern website, web services and
                 online stores.
               </div>
-              <button class="btn btn-active" @click="changeText">
+              <button class="btn btn-active" @click="download">
                 Download CV
               </button>
             </div>
@@ -346,9 +349,11 @@
                   class="grid grid-cols-12 mx-2 sm:mx-48 justify-items-center py-4"
                 >
                   <div class="col-span-4">
-                    <button
+                    <a
                       class="font-bold text-indigo-700 hover:text-indigo-900 btn-ghost p-2 rounded-full tooltip"
                       data-tip="Linkedin"
+                      href="https://www.linkedin.com/in/rozzy-rahmanda-aa366b132/"
+                      target="_blank"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -365,12 +370,14 @@
                           d="M14 19H18V34H14zM15.988 17h-.022C14.772 17 14 16.11 14 14.999 14 13.864 14.796 13 16.011 13c1.217 0 1.966.864 1.989 1.999C18 16.11 17.228 17 15.988 17zM35 24.5c0-3.038-2.462-5.5-5.5-5.5-1.862 0-3.505.928-4.5 2.344V19h-4v15h4v-8c0-1.657 1.343-3 3-3s3 1.343 3 3v8h4C35 34 35 24.921 35 24.5z"
                         />
                       </svg>
-                    </button>
+                    </a>
                   </div>
                   <div class="col-span-4">
-                    <button
+                    <a
                       class="font-bold text-indigo-700 hover:text-indigo-900 btn-ghost p-2 rounded-full tooltip"
                       data-tip="Github"
+                      href="https://github.com/rozzyy"
+                      target="_blank"
                     >
                       <svg
                         fill="#000000"
@@ -383,7 +390,7 @@
                           d="M17.791,46.836C18.502,46.53,19,45.823,19,45v-5.4c0-0.197,0.016-0.402,0.041-0.61C19.027,38.994,19.014,38.997,19,39 c0,0-3,0-3.6,0c-1.5,0-2.8-0.6-3.4-1.8c-0.7-1.3-1-3.5-2.8-4.7C8.9,32.3,9.1,32,9.7,32c0.6,0.1,1.9,0.9,2.7,2c0.9,1.1,1.8,2,3.4,2 c2.487,0,3.82-0.125,4.622-0.555C21.356,34.056,22.649,33,24,33v-0.025c-5.668-0.182-9.289-2.066-10.975-4.975 c-3.665,0.042-6.856,0.405-8.677,0.707c-0.058-0.327-0.108-0.656-0.151-0.987c1.797-0.296,4.843-0.647,8.345-0.714 c-0.112-0.276-0.209-0.559-0.291-0.849c-3.511-0.178-6.541-0.039-8.187,0.097c-0.02-0.332-0.047-0.663-0.051-0.999 c1.649-0.135,4.597-0.27,8.018-0.111c-0.079-0.5-0.13-1.011-0.13-1.543c0-1.7,0.6-3.5,1.7-5c-0.5-1.7-1.2-5.3,0.2-6.6 c2.7,0,4.6,1.3,5.5,2.1C21,13.4,22.9,13,25,13s4,0.4,5.6,1.1c0.9-0.8,2.8-2.1,5.5-2.1c1.5,1.4,0.7,5,0.2,6.6c1.1,1.5,1.7,3.2,1.6,5 c0,0.484-0.045,0.951-0.11,1.409c3.499-0.172,6.527-0.034,8.204,0.102c-0.002,0.337-0.033,0.666-0.051,0.999 c-1.671-0.138-4.775-0.28-8.359-0.089c-0.089,0.336-0.197,0.663-0.325,0.98c3.546,0.046,6.665,0.389,8.548,0.689 c-0.043,0.332-0.093,0.661-0.151,0.987c-1.912-0.306-5.171-0.664-8.879-0.682C35.112,30.873,31.557,32.75,26,32.969V33 c2.6,0,5,3.9,5,6.6V45c0,0.823,0.498,1.53,1.209,1.836C41.37,43.804,48,35.164,48,25C48,12.318,37.683,2,25,2S2,12.318,2,25 C2,35.164,8.63,43.804,17.791,46.836z"
                         />
                       </svg>
-                    </button>
+                    </a>
                   </div>
                   <div class="col-span-4">
                     <button
@@ -479,7 +486,7 @@
                     <div class="py-2">
                       <b>Email :</b> rozzyrahmanda0@gmail.com
                     </div>
-                    <div class="py-2"><b>Skype :</b> rozzy.88</div>
+                    <!-- <div class="py-2"><b>Skype :</b> rozzy.88</div> -->
                   </div>
                 </div>
               </div>
@@ -553,10 +560,12 @@
                   </div>
                 </div>
                 <div class="justify-end card-actions">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
-                  esse enim inventore, vel quod iure asperiores corporis
-                  voluptate quaerat eius similique provident tempore! Eos
-                  doloremque aut earum! Reprehenderit, veniam cupiditate!
+                  Optimizing the user experience. Using HTML, JavaScript and CSS
+                  to bring concepts to life. Developing and maintaining the user
+                  interface. Implementing design on mobile websites. Creating
+                  tools that improve site interaction regardless of the browser.
+                  Managing software workflow. Following SEO best practices.
+                  Fixing bugs and testing for usabilit
                 </div>
               </div>
             </div>
@@ -671,36 +680,7 @@
                 class="bg-indigo-400 rounded-full w-12 h-12 opacity-50 -ml-36 -mt-3 animate-dot"
               ></div>
             </div>
-            <div class="sm:grid sm:grid-rows-2 sm:grid-flow-col flex flex-col sm:h-3/4">
-              <div class="bg-gray-200 row-span-2 h-3/4">
-                <img
-                  src="https://picsum.photos/id/1/200/300"
-                  alt="gambar"
-                  class="h-full w-full"
-                />
-              </div>
-              <div class="bg-gray-200 h-3/4">
-                <img
-                  src="https://picsum.photos/id/1/200/300"
-                  alt="gambar"
-                  class="h-full w-full"
-                />
-              </div>
-              <div class="bg-gray-200 h-3/4">
-                <img
-                  src="https://picsum.photos/id/1/200/300"
-                  alt="gambar"
-                  class="h-full w-full"
-                />
-              </div>
-              <div class="bg-gray-200 row-span-2 h-3/4">
-                <img
-                  src="https://picsum.photos/id/1/200/300"
-                  alt="gambar"
-                  class="h-full w-full"
-                />
-              </div>
-            </div>
+            <silent-box :gallery="gallery"></silent-box>
           </div>
         </div>
         <div class="sm:pl-24 bg-blue-100">
@@ -905,12 +885,32 @@ export default {
         "TailwindCSS",
         "Bootstrap 4",
         "Node JS + Express + Sequelize",
-        "Laravel + RESTFULL API",
-        "Python + Fast API"
+        "Laravel + RESTFULL API"
       ],
       textOnSlide: "",
       num: 0,
-      show: false
+      show: false,
+      gallery: [
+        {
+          src: "https://picsum.photos/id/10/1024/768",
+          description: "Star Night Sky Ravine by Mark Basarab, from Unsplash.",
+          alt: "Blue starry night photo.",
+          thumbnailWidth: '300px'
+        },
+        {
+          src: "https://picsum.photos/id/10/1024/768",
+          description: "Corno Nero, Italy by Luca Zanon, from Unsplash.",
+          alt: "Landscape photo of mountain with fog.",
+          thumbnailWidth: '300px'
+        },
+        {
+          src: "https://picsum.photos/id/10/1024/768",
+          description:
+            "Remote forest path in Gävle, Sweden by Geran de Klerk, from Unsplash.",
+          alt: "Low angle photo of pine trees.",
+          thumbnailWidth: '300px'
+        },
+      ]
     };
   },
   head() {
@@ -971,6 +971,12 @@ export default {
         this.nav = "portfolio";
       }
       console.log(scroll);
+    },
+    download() {
+      window.open(
+        "https://drive.google.com/file/d/10SbdQdOlTAPKAoICFKpk6NYRJ5-mg1Md/view?usp=sharing",
+        "_blank"
+      );
     },
     changeText() {
       if (this.num < this.textSlide.length * 8 - 8) {
